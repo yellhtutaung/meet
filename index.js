@@ -75,8 +75,8 @@ const peerServer = ExpressPeerServer(server,{
 
 
     // const LocalIp = '192.168.100.19';
-    server.listen(5500, function () {
-        console.log(" *** Port 5500 is listening ***");
+    server.listen(80, function () {
+        console.log(" *** Port 80 is listening ***");
     });
 
 
