@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <meta name="google-signin-client_id" content="350748590692-3ipa3n8rgvq19t0ro83usgcu3m58bmfq.apps.googleusercontent.com">
+    <title>🤍 Login | Meet By YellHtut 🤍</title>
+
+    <link rel="shortcut icon" href="img/body/me.png" />
+    <!-- Font Awesome -->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"> -->
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Extra Css-->
+    <link rel="stylesheet" href="css/mdb-extra.min.css">
+    <!-- Scroll Bar Css-->
+    <link rel="stylesheet" href="css/scroll-bar.css">
+    <!-- Animated Css -->
+<!--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
+    <link rel="stylesheet" href="css/animated.min.css" />
+
+
+    <!-- Themes Icon Css -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
+    <link rel='stylesheet' id='roboto-subset.css-css'  href='https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/css/mdb5/fonts/roboto-subset.css?ver=3.9.0-update.5' type='text/css' media='all' />
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" ></script> -->
+    <script type="text/javascript" src="js/socket.io.js" ></script>
+
+    <style>
+        .divider:after,
+        .divider:before {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #eee;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<!-- Start your project here-->
+
+<section class="vh-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex align-items-center justify-content-center h-100">
+        <!-- <div class="col-md-8 col-lg-7 col-xl-6">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image">
+        </div> -->
+        <div class="animated slideInDown card shadow p-4 col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+          <form method="POST" action="/login" >
+            <h3 class="mb-3  text-bold">MEET WITH PARTNERS</h3>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="email">Email </label>
+              <input type="email" id="email" value="yellhtut4@gmail.com" name="email" class="form-control form-control-lg" />
+            </div>
+  
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="password">Password</label>
+              <input type="password" id="password" value="1234" name="password" class="form-control form-control-lg" />
+            </div>
+  
+<!--             <div class="d-flex justify-content-around align-items-center mb-4"> -->
+<!--                --><!-- Checkbox -->
+<!--               <div class="form-check"> -->
+<!--                 <input -->
+<!--                   class="form-check-input" -->
+<!--                   type="checkbox" -->
+<!--                   value="" -->
+<!--                   id="form1Example3" -->
+<!--                   checked -->
+<!--                 /> -->
+<!--                 <label class="form-check-label" for="form1Example3"> Remember me </label> -->
+<!--               </div> -->
+<!--               <a href="#!">Forgot password?</a> -->
+<!--             </div> -->
+  
+            <!-- Submit button -->
+              <div class="form-outline mb-4 mt-4">
+                <button type="submit" class="btn btn-dark theme-text-color btn-lg btn-block">Sign in</button>
+              </div>
+
+            <div class="divider d-flex align-items-center my-4">
+              <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+            </div>
+
+<!--            <button class="btn btn-lg btn-block text-white " data-onsuccess="onSignIn"  style="background-color: rgb(221, 75, 57);" type="button">-->
+<!--                <i class="fab fa-google me-2"></i> &nbsp; Sign in with google-->
+<!--            </button>-->
+
+              <div class="g-signin2 w-100" data-onsuccess="onSignIn"></div>
+              <a href="#" onclick="signOut();">Sign out</a>
+            <!-- <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!" role="button">
+              <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
+            </a>
+            <a class="btn btn-primary btn-lg btn-block" style="background-color: #55acee" href="#!" role="button">
+              <i class="fab fa-twitter me-2"></i>Continue with Twitter</a> -->
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- <script type="text/javascript" src="js/video.js"></script> -->
+
+<!-- End your project here-->
+<!-- <script  src="/chat.js"></script> -->
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<!-- Your custom scripts (optional) -->
+
+<script>
+
+    function onSignIn(googleUser)
+    {
+        var profile = googleUser.getBasicProfile();
+        console.log(profile);
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    }
+
+    function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+            console.log('User signed out.');
+        });
+    }
+
+</script>
+
+
+</body>
+</html>

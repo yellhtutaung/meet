@@ -1,0 +1,370 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+
+    background-image: url('../img/body/haking.gif');
+    background-size: cover;
+    /* background-color: lightgray; */
+}
+.theme-text-color{
+    color: #2bda01;
+}
+.theme-bg{
+    background-color: #2bda01;
+}
+
+/* WINDOW SCROLL */
+
+.custom-scroll-bar::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: black;
+
+}
+
+.custom-scroll-bar::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: black;
+}
+
+.custom-scroll-bar::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+
+body::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: black;
+
+}
+
+body::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: black;
+}
+
+body::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+
+/* WINDOW SCROLL */
+
+
+/* Message Typing */
+.typing-control{
+    margin: -40px 0 10px 12px;
+}
+.bubble-chat {
+	background-color: #E6E7EC;
+	width: 40px;
+	height: 30px;
+	border-radius: 30% / 50%;
+	margin: 0 auto;
+	position: relative;
+	/* top: 150px */
+}
+
+.container-circle {
+	width: 100px;
+	position: relative;
+	margin: 0 auto
+}
+
+.circle {
+	height: 10px;
+	width: 10px;
+	margin: 0 2px;
+	background-color: #B6B5BA;
+	border-radius: 50%;
+	display: inline-block;
+	position: relative;
+	top: 28px;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear
+
+}
+
+#circle1 {
+  -webkit-animation-name: circle1;
+}
+
+#circle2 {
+  -webkit-animation-name: circle2;
+}
+
+#circle3 {
+  -webkit-animation-name: circle3;
+}
+
+#circle1 {
+  animation-name: circle1;
+}
+
+#circle2 {
+  animation-name: circle2;
+}
+
+#circle3 {
+  animation-name: circle3;
+}
+
+.cc1 {
+	background-color: #9E9DA2
+}
+
+
+@-webkit-keyframes circle1 {
+  0% {
+    top: 30px;
+  }
+  15% {
+    top: 20px;
+  }
+  25% {
+    top: 30px;
+  }
+}
+
+@-webkit-keyframes circle2 {
+  10% {
+    top: 30px;
+  }
+  25% {
+    top: 20px;
+  }
+  35% {
+    top: 30px;
+  }
+}
+
+@-webkit-keyframes circle3 {
+  15% {
+    top: 30px;
+  }
+  30% {
+    top: 20px;
+  }
+  40% {
+    top: 30px;
+  }
+}
+
+@keyframes circle1 {
+  0% {
+    top: 30px;
+  }
+  15% {
+    top: 20px;
+  }
+  25% {
+    top: 30px;
+  }
+}
+
+@keyframes circle2 {
+  10% {
+    top: 30px;
+  }
+  25% {
+    top: 20px;
+  }
+  35% {
+    top: 30px;
+  }
+}
+
+@keyframes circle3 {
+  15% {
+    top: 30px;
+  }
+  30% {
+    top: 20px;
+  }
+  40% {
+    top: 30px;
+  }
+}
+
+/* Message Typing */
+
+
+.videos-grid{
+    width: 100%;
+    height: 650px;
+    overflow-y: scroll;
+    /* background-color: oldlace; */
+    background-image: url('../img/body/haking.gif');
+    background-size: cover;
+
+}
+
+video{
+    width: 100%;
+    height: 270px;
+    border-radius: 10px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),  0 6.7px 5.3px rgba(0, 0, 0, 0.048),  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),  0 41.8px 33.4px rgba(0, 0, 0, 0.086),  0 100px 80px rgba(0, 0, 0, 0.12);
+
+}
+
+.video-gride-image{
+    width: 100%;
+    height: 270px;
+    border-radius: 5px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),  0 6.7px 5.3px rgba(0, 0, 0, 0.048),  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),  0 41.8px 33.4px rgba(0, 0, 0, 0.086),  0 100px 80px rgba(0, 0, 0, 0.12);
+
+}
+.chat-header{
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 3px;
+    color: #2bda01;
+    /* box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12)  ; */
+
+}
+.message-grid{
+    width: 100%;
+    height: 650px; /*  you must to reduce chat header height  */
+    overflow-y:  scroll;
+    /* background-color: oldlace; */
+    background-image: url('../img/body/left-txt.jpg');
+    background-size: 100% 645px;
+    background-repeat: no-repeat;
+
+}
+.typing-input{
+    height: auto;
+    border: none;
+    border-radius: 5px;
+    margin-top: 7px;
+    padding: 5px;
+    background-color: oldlace;
+}
+.typing-input:focus{
+    border: none !important;
+}
+.sent-icon{
+    padding: 5px;
+    color: white;
+}
+.sent-btn{
+    /* background-color: red; */
+    border-radius: 5px;
+    width: 10px;
+    color: white;
+    margin-top: 7px;
+
+}
+.sms-text{
+    overflow-y: scroll;
+    height: 590px;
+
+}
+.each-video{
+    margin: 8px 0;    
+}
+.user-sms-txt{
+
+    background-color: #2bda01;
+    color: black;
+    padding: 8px;
+    float: right;
+    width: auto;
+    border-radius: 10px 14px 0 10px;
+    margin: 0 0 10px 20%;
+    list-style-type: none;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),  0 6.7px 5.3px rgba(0, 0, 0, 0.048),  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),  0 41.8px 33.4px rgba(0, 0, 0, 0.086),  0 100px 80px rgba(0, 0, 0, 0.12);
+
+}
+
+.partner-sms-txt{
+  width:  auto;
+  height: auto;
+  float: left;
+  background-color:  #2bda01;
+  color: black;
+  padding: 8px;
+  border-radius: 10px 14px 10px 0;
+  margin: 0 20% 10px 0;
+  list-style-type: none;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),  0 6.7px 5.3px rgba(0, 0, 0, 0.048), 
+    0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072),  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+      0 100px 80px rgba(0, 0, 0, 0.12);
+
+
+}
+.partner-img-control{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+
+
+
+/* FOOTER FIXED */
+.user-footer-div{
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    color: white;
+}
+
+
+
+
+/*Tablet*/
+@media screen and (max-width: 1024px) and (min-width: 600px) {
+
+  .md-my-custom{
+    margin: 100px 0 !important;
+  }
+ 
+
+}
+
+
+
+/*MOBILE PHONE*/
+@media only screen and (max-width: 600px) {
+
+  .sm-sms-div{
+    margin: 50px 0 !important;
+  }
+  .partner-sms-txt{
+    max-width: 70%;
+    margin: 0 20% 10px 10px;
+    height: auto;
+  }
+
+}
+

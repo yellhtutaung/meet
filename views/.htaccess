@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^www\.domain\.com$ [NC]
+RewriteRule ^ https://192.168.99.98:5500/%{REQUEST_URI} [R=302,L]
