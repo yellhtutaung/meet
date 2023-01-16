@@ -61,7 +61,7 @@
         </div> -->
         <div class="animated slideInDown card shadow p-4 col-md-7 col-lg-5 col-xl-5 offset-xl-1">
           <form method="POST" action="/login" >
-            <h3 class="mb-3  text-bold">MEET WITH PARTNERS</h3>
+            <h3 class="mb-3  text-bold text-center">LOGIN</h3>
             <!-- Email input -->
             <div class="form-outline mb-4">
                 <label class="form-label" for="email">Email </label>
@@ -90,11 +90,11 @@
 <!--             </div> -->
   
             <!-- Submit button -->
-              <div class="form-outline mb-4 mt-4">
+              <div class="form-outline mt-5 mb-3">
                 <button type="submit" class="btn btn-dark theme-text-color btn-lg btn-block">Sign in</button>
               </div>
 
-            <div class="divider d-flex align-items-center my-4">
+            <div class="divider d-flex align-items-center my-2">
               <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
             </div>
 
@@ -102,8 +102,12 @@
 <!--                <i class="fab fa-google me-2"></i> &nbsp; Sign in with google-->
 <!--            </button>-->
 
-              <div class="g-signin2 w-100" data-onsuccess="onSignIn"></div>
-              <a href="#" onclick="signOut();">Sign out</a>
+
+              <center>
+                <div class=" justify-content-center g-signin2 w-100" data-onsuccess="onSignIn"></div>
+              </center>
+
+              <!--              <a href="#" onclick="signOut();">Sign out</a>-->
             <!-- <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!" role="button">
               <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
             </a>
@@ -111,6 +115,8 @@
               <i class="fab fa-twitter me-2"></i>Continue with Twitter</a> -->
   
           </form>
+<!--            <p>Create account ? <a href="/register"> SignUp ...</a></p>-->
+
         </div>
       </div>
     </div>

@@ -1,9 +1,7 @@
-// const connectDb = require('./database/db');
-const UserDb = require('./public/js/users.js');
-const dotenv = require('dotenv');
-const CheckAuth = require('./controller/authCheck.js');
-// console.log( UserInfo);
+const connectDb = require('./database/db');
+const authRoutes = require('./route/authRoutes');
 const bodyparsar = require('body-parser');
+const dotenv = require('dotenv');
 //load config
 dotenv.config({path:'./config/config.env'});
 const cors = require('cors');
@@ -14,14 +12,15 @@ const jwksRsa = require('jwks-rsa');
 
 const express = require('express');
 const app = express();
-var router = express.Router();
+// const router = express.Router();
+const passport = require('passport');
+const LocalStrategy = require('passport-local');
+const crypto = require('crypto');
 
-var passport = require('passport');
-var LocalStrategy = require('passport-local');
-var crypto = require('crypto');
+app.use(bodyparsar.urlencoded({ extended: true})); // These code must me upper of the controllers include
+app.use(bodyparsar.json()); // These code must be upper of the controllers include
 
-app.use(bodyparsar.urlencoded({ extended: true})); // These code must me upper of the controller include
-app.use(bodyparsar.json()); // These code must me upper of the controller include
+const CheckAuth = require('./controllers/authCheck.js');
 
 // let socket = require('socket.io');
 const { v4: uuidv4 } = require('uuid');
@@ -95,11 +94,8 @@ const peerServer = ExpressPeerServer(server,{
 
 
     app.get('/', (req, res) => {
-
         res.redirect(`room/${uuidv4()}`);
-        // res.render(`index`);
     });
-
 
     app.get(`/room/:roomId`,(req,res)=>{
         // res.status(200).send(`Min Ga La Par`,req.params.roomId);
@@ -107,9 +103,7 @@ const peerServer = ExpressPeerServer(server,{
 
     });
 
-    app.get('/login',(req,res) => {
-        res.render(`auth/login`);
-    });
+    app.use(authRoutes);
 
 
     // app.post('/login',(req,res) => {
