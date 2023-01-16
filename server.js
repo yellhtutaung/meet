@@ -98,26 +98,19 @@ const peerServer = ExpressPeerServer(server,{
     });
 
     app.get(`/room/:roomId`,(req,res)=>{
-        // res.status(200).send(`Min Ga La Par`,req.params.roomId);
         res.render('room',{roomId:req.params.roomId});
-
     });
 
     app.use(authRoutes);
 
-
-    // app.post('/login',(req,res) => {
-    //     res.json('login is starting ...');
-    // });
-
     app.use('/',CheckAuth);
 
-    io.on('connection', socket => {
+    io.on('connection', socket =>
+    {
 
         // This is specific room
-        
-        socket.on('join-room', (RoomId,UserId) => {
-            
+        socket.on('join-room', (RoomId,UserId) =>
+        {
             socket.join(RoomId);
             socket.to(RoomId).broadcast.emit('user-connected',RoomId,UserId);
             console.log(UserId);
@@ -125,29 +118,24 @@ const peerServer = ExpressPeerServer(server,{
             socket.on('disconnect' , () => {
                 socket.to(RoomId).broadcast.emit('user-disconnected',UserId);
             });  
-            
         });
-        
         // This is specific room
 
         // Keyup Socket
-
-        socket.on('typing-input-keyup' , (RoomId,KeyupVal) => {
+        socket.on('typing-input-keyup' , (RoomId,KeyupVal) =>
+        {
             console.log('This '+RoomId+ ' users is keyup');
             socket.join(RoomId);
             socket.to(RoomId).broadcast.emit('server-keyup-emiting',RoomId,KeyupVal);
         });
-        
         // Keyup Socket
 
 
         // Sms Socket
-
         socket.on('user-sms' , (Sms,RoomId) => {
             socket.join(RoomId);
             socket.to(RoomId).broadcast.emit('user-sms-val',{'Sms':Sms,'RoomId':RoomId});
         });
-
         // Sms Socket
 
     });

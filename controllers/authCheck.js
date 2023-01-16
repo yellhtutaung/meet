@@ -11,20 +11,20 @@ var crypto = require('crypto');
         
        let ClientEmail = req.body.email;
        let ClientPassword = req.body.password;
-      //  console.log(Email,Password);
+       console.log(ClientEmail,ClientPassword);
 
-      let ResponseText = '';
-
-      UserInfo.map((User , Index)=> {
-
-      // console.log(User);
-         if(User.email == ClientEmail)
-         {
-            if(User.password == ClientPassword)
-            {
-               res.redirect('/');
-            }
-         }
+      // let ResponseText = '';
+      //
+      // UserInfo.map((User , Index)=> {
+      //
+      // // console.log(User);
+      //    if(User.email == ClientEmail)
+      //    {
+      //       if(User.password == ClientPassword)
+      //       {
+      //          res.redirect('/');
+      //       }
+      //    }
 
       });
 
