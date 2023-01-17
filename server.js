@@ -20,7 +20,7 @@ const crypto = require('crypto');
 app.use(bodyparsar.urlencoded({ extended: true})); // These code must me upper of the controllers include
 app.use(bodyparsar.json()); // These code must be upper of the controllers include
 
-const CheckAuth = require('./controllers/authCheck.js');
+const CheckAuth = require('./controllers/authCheckController.js');
 
 // let socket = require('socket.io');
 const { v4: uuidv4 } = require('uuid');
