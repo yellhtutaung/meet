@@ -1,12 +1,14 @@
+const dotenv = require('dotenv');
+//load config
+dotenv.config({path:'./config/config.env'});
 const mongoose = require('mongoose');
 const connectDb = async () =>
 {
     try{
-        const conn = await mongoose.connect('mongodb+srv://chatapp:0>1(yh)69hackAll@chatapp.mlt9a.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
+        const conn = await mongoose.connect(process.env.MONGO_URL+'/'+process.env.DATABASE);
             console.log(`MongoDb is connected : ${conn.connection.host}`);
     }catch (err) {
             console.log(`${err}`);
     }
 }
-
 module.exports = connectDb();

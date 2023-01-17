@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-var ebuzzySchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     id:{
         type: Number,
         required: "Id fiels is required"
@@ -67,4 +67,4 @@ var ebuzzySchema = new mongoose.Schema({
     }
 });
 
-mongoose.model('users',ebuzzySchema);
+mongoose.model('users',userSchema);

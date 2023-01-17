@@ -101,9 +101,9 @@ const peerServer = ExpressPeerServer(server,{
         res.render('room',{roomId:req.params.roomId});
     });
 
-    app.use(authRoutes);
+    app.use('/',authRoutes);
 
-    app.use('/',CheckAuth);
+    // app.use('/',CheckAuth);
 
     io.on('connection', socket =>
     {
