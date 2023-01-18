@@ -147,5 +147,4 @@ const peerServer = ExpressPeerServer(server,{
 
     server.listen(Port,Host, function () {
         console.log(`*** Port ${Host+':'+Port} is listening ***`);
-        console.log(' -------------------------');
     });
