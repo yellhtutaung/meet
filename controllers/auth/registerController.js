@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 const router = express.Router();
 const mongoose = require('mongoose');
-const {User} = require('../../models/users.model');
+require('../../models/users.model');
+require('../helperController');
 const userTB = mongoose.model('users');
 const {getLastRecortOfModel} = require('../helpers/generalHelpers');
 
@@ -39,6 +40,7 @@ const createRegisterUser = (req,res)=>
         }
     });
     console.log('---------------------------------------------');
+
 }
 
 module.exports = {createRegisterUser};
