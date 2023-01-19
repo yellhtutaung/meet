@@ -7,7 +7,9 @@ const userSchema = new mongoose.Schema({
     },
     name:{
         type: String,
-        required: 'Name field is required'
+        required: 'Name field is required',
+        min:4,
+        max:30
     },
     userName:{
         type: String,
@@ -15,7 +17,8 @@ const userSchema = new mongoose.Schema({
     },
     email:{
         type: String,
-        required: 'Email is required'
+        required: 'Email is required',
+        // default:
     },
     phone:{
         type: String,
@@ -23,7 +26,9 @@ const userSchema = new mongoose.Schema({
     },
     password:{
         type: String,
-        required: 'Password is required'
+        required: 'Password is required',
+        min:6,
+        max:20
     },
     date_of_birth:{
         type: String,
@@ -67,4 +72,6 @@ const userSchema = new mongoose.Schema({
     }
 });
 
-mongoose.model('users',userSchema);
+const User = mongoose.model('users',userSchema);
+
+module.exports = User;
