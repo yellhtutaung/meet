@@ -1,5 +1,6 @@
 const connectDb = require('./database/db');
 const authRoutes = require('./route/authRoutes');
+const testRoutes = require('./route/testRoute');
 const bodyparsar = require('body-parser');
 const dotenv = require('dotenv');
 //load config
@@ -102,6 +103,7 @@ const peerServer = ExpressPeerServer(server,{
     });
 
     app.use('/',authRoutes);
+    app.use('/test',testRoutes);
 
     // app.use('/',CheckAuth);
 
