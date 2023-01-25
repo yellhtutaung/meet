@@ -2,10 +2,107 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> OpenAI By YellHtut </title>
+    <!-- url icon -->
+    <link rel="shortcut icon" href="../img/body/me.png" />
+    <!-- Font Awesome -->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"> -->
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="../css/mdb.min.css">
+    <!-- Your custom styles (optional) -->
+<!--    <link rel="stylesheet" href="../css/style.css">-->
+    <!-- Extra Css-->
+    <link rel="stylesheet" href="../css/mdb-extra.min.css">
+    <!-- Scroll Bar Css-->
+    <link rel="stylesheet" href="../css/scroll-bar.css">
+    <!-- Animated Css -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
+    <link rel="stylesheet" href="../css/animated.min.css" />
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+<!--    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>-->
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" ></script> -->
+    <script type="text/javascript" src="../js/socket.io.js" ></script>
+
 </head>
+
 <body>
-    <h4>Test data -->  <%= outData %></h4>
+
+<!-- Start your project here-->
+
+<div class="container ">
+
+    <div class="row mt-5">
+        <div class="col-sm-12 col-md-4">
+            <div class="card">
+                <div class="card-header bg-dark text-white">
+                    Generate Image By OpenAI
+                </div>
+                <div class="card-body">
+                    <form id="openAIform" action="/test" method="POST">
+                        <div class="form-group">
+                            <label for="input">Example : </label><small class="d-inline text-muted"> ( A dog )</small>
+                            <input name="input_val" value="a dog" id="input_val" class="form-control" type="text" autofocus />
+                        </div>
+                        <button type="submit" id="submit-btn" class="btn btn-dark w-100 ml-0">GENERATE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-8 ">
+            <div class="card" style="width: 100%;height: 150px;">
+                <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/182.webp" class="card-img-top" alt="Sunset Over the Sea"/>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- End your project here-->
+<!-- <script  src="/chat.js"></script> -->
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="../js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="../js/mdb.min.js"></script>
+<!-- Your custom scripts (optional) -->
+
+<script>
+
+    let resUrl = '<%= resByOpenAI %>' ;
+    console.log(resUrl);
+
+    $("#openAIform").submit(function( event ) {
+        event.preventDefault();
+        if(navigator.onLine)
+        {
+            // $('#submit-btn').attr('disabled', '');
+
+            // let formData = new FormData($('#openAIform')[0]);
+            let formData = $("#input_val").val();
+
+            $.ajax({
+                url: "test",
+                type:'POST',
+                data:{inputVal:formData},
+                dataType:'json',
+                success:function(data)
+                {
+                    console.log(data);
+                }
+            });
+        }else {
+            alert('!No Internet Connection ');
+        }
+    });
+
+</script>
+
 </body>
 </html>
