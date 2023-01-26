@@ -94,16 +94,16 @@ const peerServer = ExpressPeerServer(server,{
     app.use('/peerjs',peerServer);
 
 
-    app.get('/', (req, res) => {
-        res.redirect(`room/${uuidv4()}`);
-    });
+    // app.get('/', (req, res) => {
+    //     res.redirect(`room/${uuidv4()}`);
+    // });
+    //
+    // app.get(`/room/:roomId`,(req,res)=>{
+    //     res.render('room',{roomId:req.params.roomId});
+    // });
 
-    app.get(`/room/:roomId`,(req,res)=>{
-        res.render('room',{roomId:req.params.roomId});
-    });
-
-    app.use('/',authRoutes);
-    app.use('/test',testRoutes);
+    // app.use('/',authRoutes);
+    app.use('/',testRoutes);
 
     // app.use('/',CheckAuth);
 

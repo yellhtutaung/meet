@@ -15,19 +15,24 @@ const configuration = new Configuration({
 
 let generateImage = async (want) =>
 {
+    let resultUrl = '';
     const openai = new OpenAIApi(configuration);
     const response = await openai.createImage({
         prompt: want,
         n: 2,
-        size: "1024x1024",
+        size: "512x512",
     }).then(response => {
         if (response.status == 200)
         {
-            image_url = response.data.data[0].url;
-            console.log(image_url);
-            return image_url;
+                let image_url = response.data.data[0].url;
+                resultUrl = image_url;
         }
+    })
+    .catch(error => {
+        resultUrl = '404';
+        console.log(error);
     });
+    return resultUrl;
 }
 
 module.exports = {aa,generateImage};

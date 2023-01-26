@@ -35,36 +35,46 @@
 
 <!-- Start your project here-->
 
+
+<!-- As a heading -->
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">OPENAI</span>
+    </div>
+</nav>
+
 <div class="container ">
 
-    <div class="row mt-5">
+    <div class="row  mt-4">
         <div class="col-sm-12 col-md-4">
-            <div class="card">
-                <div class="card-header bg-dark text-white">
+            <div class="card animated fadeUp">
+                <div class="card-header text-white" style="background: black;">
                     Generate Image By OpenAI
                 </div>
-                <div class="card-body">
+                <div class="card-body ">
                     <form id="openAIform" action="/test" method="POST">
                         <div class="form-group">
                             <label for="input">Example : </label><small class="d-inline text-muted"> ( A dog )</small>
                             <input name="input_val" value="a dog" id="input_val" class="form-control" type="text" autofocus />
                         </div>
-                        <button type="submit" id="submit-btn" class="btn btn-dark w-100 ml-0">GENERATE</button>
+                        <button type="submit" id="submit-btn" class="btn btn-dark w-100 ml-0">
+                            GENERATE
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="col-sm-12 col-md-8 ">
-            <div class="card" style="width: 100%;height: 150px;">
-                <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/182.webp" class="card-img-top" alt="Sunset Over the Sea"/>
+        <div class="col-sm-12 col-md-8 mt-4 mt-sm-0">
+            <div class="card img-place " style="width: 100%;">
+                <img class="card-img-top generate-url" style="width: 100%;height: 350px;" src="https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg"  alt="Sunset Over the Sea"/>
             </div>
         </div>
     </div>
 
 </div>
 
-<!-- End your project here-->
-<!-- <script  src="/chat.js"></script> -->
+<!-- For OpenAI-->
+ <script type="text/javascript"  src="../js/isLoadBtn.js"></script>
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="../js/popper.min.js"></script>
 <!-- Bootstrap core JavaScript -->
@@ -75,34 +85,9 @@
 
 <script>
 
-    let resUrl = '<%= resByOpenAI %>' ;
-    console.log(resUrl);
 
-    $("#openAIform").submit(function( event ) {
-        event.preventDefault();
-        if(navigator.onLine)
-        {
-            // $('#submit-btn').attr('disabled', '');
 
-            // let formData = new FormData($('#openAIform')[0]);
-            let formData = $("#input_val").val();
-
-            $.ajax({
-                url: "test",
-                type:'POST',
-                data:{inputVal:formData},
-                dataType:'json',
-                success:function(data)
-                {
-                    console.log(data);
-                }
-            });
-        }else {
-            alert('!No Internet Connection ');
-        }
-    });
 
 </script>
-
 </body>
 </html>
